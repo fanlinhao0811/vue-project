@@ -5,6 +5,7 @@
         <swipe-item class="slide1"></swipe-item>
         <swipe-item class="slide2"></swipe-item>
         <swipe-item class="slide3"></swipe-item>
+				<swipe-item class="slide3"></swipe-item>
       </swipe>
 			<common-footer bgColor="rgb(121, 85, 72)"></common-footer>
 	</div>
