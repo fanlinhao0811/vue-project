@@ -6,7 +6,7 @@
       <movie-nav></movie-nav>
       <router-view></router-view>
       <div class='loading' v-show="isShow">
-          <img src="/static/img/loading.gif" alt="">
+        <img src="/static/img/loading.gif" alt="">
       </div>
       <common-footer bgColor="rgb(33, 150, 243)"></common-footer>
   </div>
@@ -27,14 +27,14 @@ export default {
     }
   },
   mounted(){
-    let _this           = this;
-        window.onscroll = function(){
+    let _this = this;
+    window.onscroll = function(){
       let scrollTop    = document.documentElement.scrollTop;
       let clientHeight = document.documentElement.clientHeight;
       let htmlHeight   = document.documentElement.scrollHeight;
       if(scrollTop + clientHeight >= htmlHeight){
-          _this.isShow = true;
-          _this.loadData();
+        _this.isShow = true;
+        _this.loadData();
       }
     }
     //https://api.douban.com/v2/movie/top250?count=10&start=10
@@ -42,9 +42,9 @@ export default {
   },
   methods:{
     loadData(){
-       Axios.get(API_PROXY + "http://m.maoyan.com/movie/list.json?type=hot&offset="+this.movieList.length+"&limit=10")
+       Axios.get(API_PROXY + "https://api.douban.com/v2/movie/in_theaters?city=广州&count="+this.movieList.length)
         .then((res)=>{
-          this.movieList = this.movieList.concat(res.data.data.movies);
+          this.movieList = this.movieList.concat(res.data.subjects);
           this.isShow    = false;
         });
     }
@@ -62,7 +62,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .list{
-       margin: 2rem 0 1.6rem;
+       margin: 0 0 1.6rem;
     }
     .loading{
        margin-bottom: 1rem;

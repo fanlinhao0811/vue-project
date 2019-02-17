@@ -16,8 +16,9 @@ export default new Router({
     {
       path: '/',
 			// component: ComponentA
-			redirst:'/movie/top250'
-    },{
+			redirect:'/movie/top250'
+    },
+    {
       path: '/movie',
 			component: Movie,
 			children:[
@@ -25,7 +26,8 @@ export default new Router({
 				{path:'/movie/hot',component:Top250},
 				{path:'/movie/coming',component:Top250},
 		]
-    },{
+    },
+    {
       path: '/music',
 			component: Music,
 			redirect:'/music/music_albums',
@@ -33,10 +35,12 @@ export default new Router({
         {path:'/music/music_albums',component:Albums},
         {path:'/music/music_player/:id/:name',component:Player}
       ]
-    },{
+    },
+    {
       path: '/book',
       component: Book
-    },{
+    },
+    {
       path: '/photo',
 			component: Photo,
 			// childen:[
