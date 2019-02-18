@@ -11,36 +11,33 @@
 
 <script>
 export default {
-	 props:['bgColor'],
-  data () {
-    return {
-    }
-  }
+	props:['bgColor']
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-			.footer{
-        height    : 1rem;
-        background: rgb(33, 150, 243);
-				position	:fixed;
-				bottom		:0;
-        width			:100%;
-      }
-      .footer ul{
-				display   : flex;
-      }
-      .footer li{
-        flex       : 1;
-        text-align : center;
-        line-height:1rem; 
-      }
-			.footer li a{
-				color: #ccc;
-			}
-			.footer li a.router-link-active{
-				color: #fff;
-			}
-
+  .footer {
+    height: 1rem;
+    background: rgb(33, 150, 243);
+    position: fixed;
+    bottom:0;
+    width:100%;
+    max-width: 750px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer li{
+    text-align : center;
+    line-height:1rem; 
+  }
+  .footer li a{
+    color: #ccc;
+  }
+  .footer li a.router-link-active{
+    color: #fff;
+  }
 </style>

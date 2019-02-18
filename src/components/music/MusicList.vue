@@ -1,7 +1,6 @@
 <template>
     <div class="music-list">
-        <ul class='albums'>
-           
+        <ul class='albums'>         
             <li v-for='obj in musicList' :key="obj.id">
                 <router-link :to="'/music/music_player/'+obj.id+'/aa'">
                     <img :src="obj.bg" alt="">

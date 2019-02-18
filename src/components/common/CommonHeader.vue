@@ -1,7 +1,7 @@
 <template>
   <div class="header" :style="{background:bgColor}">
     <slot>
-		<p @click="back">{{nav}}</p>
+		  <p @click="back">{{nav}}</p>
 		</slot>
 		<h2>{{title}}</h2>
   </div>
@@ -14,37 +14,31 @@ export default {
 		back(){
 			history.go(-1);
 		}
-	},
-  data () {
-    return {
-   msg: 'this is test'
-    }
-  }
+	}
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-			.header{
-        height    : 1rem;
-				background: rgb(33, 150, 243);
-        display   : flex;
-        color     : #fff;
-				position:fixed;
-				top:0;
-				width: 100%;
-      }
-      .header p{
-        width : 1rem;
-        height: 1rem;
-        color : #fff;
-				text-align: center;
-				line-height: 1rem;
-      }
-      .header h2{
-        flex       : 1;
-        text-align : center;
-        text-indent: -1rem;
-      }
-
+  .header{
+    height: 1rem;
+    background: rgb(33, 150, 243);
+    color: #fff;
+    width: 100%;
+    max-width: 750px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+  }
+  .header p{
+    color : #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+  }
+  .header h2{
+    text-align : center;
+  }
 </style>

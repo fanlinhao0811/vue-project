@@ -1,12 +1,12 @@
 <template>
 	<div class="photo">
-			<common-header title="photo" nav="<" bgColor="rgb(63, 81, 181)"></common-header>
-			<ul class="photo-list">
-				<li v-for="(photo,index) in photoList" :key="index">
-					<img :src="photo.src" alt="">
-				</li>
-			</ul>
-			<common-footer bgColor="rgb(63, 81, 181)"></common-footer>
+		<common-header title="photo" nav="<" bgColor="rgb(63, 81, 181)"></common-header>
+		<ul class="photo-list">
+			<li v-for="(photo,index) in photoList" :key="index">
+				<img :src="photo.src" alt="">
+			</li>
+		</ul>
+		<common-footer bgColor="rgb(63, 81, 181)"></common-footer>
 	</div>
 </template>
 <script>
@@ -35,7 +35,8 @@ export default {
 <style>
 	.photo-list{
 		margin: 1rem 0;
-		overflow: hidden;
+		height: 100%;
+		overflow: scroll;
 	}
 	.photo-list li{
 		width: 50%;

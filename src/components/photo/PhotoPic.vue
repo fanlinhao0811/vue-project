@@ -6,14 +6,9 @@
 
 <script>
 import CommonHeader from "../common/CommonHeader"
-	export default {
-	
+export default {
 	components:{
 		CommonHeader
 	}
 }
 </script>
-
-<style scoped>
-
-</style>

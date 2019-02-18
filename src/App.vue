@@ -1,6 +1,5 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
+  <div id="app" class="mobile-wrapper">
     <router-view/>
   </div>
 </template>
@@ -12,5 +11,18 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+  background: #F2F2F2;
+}
+
+.mobile-wrapper {
+  width: 100%;
+  max-width: 750px;
+  min-height: 100vh;
+  background: #fff;
+  margin: 0 auto;
+}
 
 </style>
+

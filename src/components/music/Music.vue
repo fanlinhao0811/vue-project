@@ -18,7 +18,7 @@ data(){
 mounted(){
 	Axios.get('/static/musiclist.json').then(
 		(res)=>{this.musicList = res.data.albums;}
-	)
+    )
 },
   components:{
       CommonHeader,

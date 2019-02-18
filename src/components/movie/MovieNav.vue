@@ -21,25 +21,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-			.nav{
-        height    : 1rem;
-        background: rgb(33, 150, 243);
-        color     : #fff;
-      }
-      .nav ul{
-				display   : flex;
-      }
-      .nav li{
-        flex       : 1;
-				color:#fff;
-        text-align : center;
-        line-height: 1rem; 
-      }
-      .nav li a{
-        color: #ccc;
-      }
-      .nav li a.router-link-active{
-        color: #fff;
-      }
+  .nav{
+    height    : 0.5rem;
+    background: rgb(33, 150, 243);
+    color     : #fff;
+    margin-top: 1rem;
+  }
+  .nav ul{
+    display   : flex;
+  }
+  .nav li{
+    flex       : 1;
+    color:#fff;
+    text-align : center;
+    line-height: 0.5rem; 
+  }
+  .nav li a{
+    color: #ccc;
+  }
+  .nav li a.router-link-active{
+    color: #fff;
+  }
 
 </style>
