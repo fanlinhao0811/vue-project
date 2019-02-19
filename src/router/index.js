@@ -16,7 +16,7 @@ export default new Router({
     {
       path: '/',
 			// component: ComponentA
-			redirect:'/movie/top250'
+			redirect:'/music'
     },
     {
       path: '/movie',
@@ -29,12 +29,12 @@ export default new Router({
     },
     {
       path: '/music',
-			component: Music,
-			redirect:'/music/music_albums',
-			children:[
-        {path:'/music/music_albums',component:Albums},
-        {path:'/music/music_player/:id/:name',component:Player}
-      ]
+			component: Music
+			// redirect:'/music/music_albums',
+			// children:[
+      //   {path:'/music/music_albums',component:Albums},
+      //   {path:'/music/music_player/:id/:name',component:Player}
+      // ]
     },
     {
       path: '/book',

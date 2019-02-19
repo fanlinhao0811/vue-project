@@ -2,7 +2,7 @@
   <div class="footer" :style="{background:bgColor}">
    <ul>
 		 <li><router-link to='/movie/top250'>电影</router-link></li>
-		 <li><router-link to='/music'>音乐</router-link></li>
+		 <li><router-link to='/music'>Now</router-link></li>
 		 <li><router-link to='/book'>书籍</router-link></li>
 		 <li><router-link to='/photo'>图片</router-link></li>
 	 </ul>

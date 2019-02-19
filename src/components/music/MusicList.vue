@@ -18,10 +18,18 @@ export default {
         }
     },
     mounted(){
-        Axios.get('/static/musiclist.json')
-        .then((res)=>{
-            this.musicList = res.data.albums;
-        })
+        Axios.get(API_PROXY + "http://tingapi.ting.baidu.com/v1/restserver/ting?from=android&version=2.4.0&method=baidu.ting.plaza.getPartDesc&format=json")
+          .then((res)=>{
+            console.log(res)
+          }).catch(
+            (err) => {
+              console.log(err)
+            }
+          )
+        // Axios.get('/static/musiclist.json')
+        // .then((res)=>{
+        //     this.musicList = res.data.albums;
+        // })
     },
 }
 </script>
