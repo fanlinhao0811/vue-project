@@ -1,6 +1,6 @@
 <template>
    <div class='list'>
-        <movie-list v-for="(obj,index) in movieList" :key="index" :title="obj.nm" :year="obj.rt"
+        <movie-list v-for="(obj,index) in movieList" :key="index" :title="obj.nm" :id="obj.id"
         :avg = "obj.sc" :img = "obj.img.replace('w.h/','')" :desc = "obj.star"
         ></movie-list>
    </div>
@@ -15,18 +15,17 @@ export default {
     }
   },
   mounted(){
-    let _this           = this;
-        window.onscroll = function(){
-      let scrollTop    = document.documentElement.scrollTop;
-      let clientHeight = document.documentElement.clientHeight;
-      let htmlHeight   = document.documentElement.scrollHeight;
+    let _this = this
+    window.onscroll = function(){
+      let scrollTop = document.documentElement.scrollTop
+      let clientHeight = document.documentElement.clientHeight
+      let htmlHeight = document.documentElement.scrollHeight
       if(scrollTop + clientHeight >= htmlHeight){
-          _this.isShow = true;
-          _this.loadData();
+          _this.isShow = true
+          _this.loadData()
       }
     }
-    //https://api.douban.com/v2/movie/top250?count=10&start=10
-    this.loadData();
+    this.loadData()
   },
   methods:{
     loadData(){

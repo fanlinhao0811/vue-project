@@ -1,12 +1,12 @@
 <template>
   <div class="top250">
-    <div class="movie-img">
-			<img :src="img">
-		</div>
+		<img :src="img" class="item-img">
 		<div class="movie-title">
 			<span class="title">{{title}}</span>
-			<p> 主演：{{desc}}</p>
-      <p v-if="avg !== 0">观众评{{avg}}分</p>
+			<p class="desc"> 主演：{{desc.length > 16 ? desc.substring(0,16).concat('...') : desc}}</p>
+      <p v-if="avg !== 0" class="avg">观众评<span>{{avg}}</span>分</p>
+      <p v-else class="avg">即将上映</p>
+      <div class="buy" @click="link(id)">More</div>
 		</div>
 	 </div>
 </template>
@@ -14,37 +14,63 @@
 <script>
 export default {
   name: 'HelloWorld',
-	props:['title','avg','desc','year','img'],
-  data () {
-    return {
+  props:['title','avg','desc','id','img'],
+  methods:{
+    link(item) {
+      window.location.href = `https://maoyan.com/cinemas?movieId=${item}`
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 	.top250{
-    padding: 0.4rem;
-    margin: 0.4rem 0;
+    display: flex;
+    padding: .4rem .32rem;
+    position: relative;
   }
-  .movie-img{
-    float : left;
-    width : 0.8rem;
-    height: 0.8rem;
+  .item-img{
+    display: block;
+    width: 1.12rem;
+    height: 1.48rem;
+    margin-right: 0.32rem;
   }
-  .movie-img img{
-    width : 100%;
-  }
-    .movie-title{
-    float        : left;
-    width        : 4rem;
-    margin-left  : 0.6rem;
-    border-bottom: 1px solid #ccc;
+  .movie-title{
+    height: 1.48rem;
   }
   .title{
     color: #333;
-    font-size: 17px;
-    font-weight: bold;
+    font-size: .32rem;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    height: .36rem;
+    line-height: .36rem;
+  }
+  .desc{
+    font-size: .22rem;
+    color: #999;
+    margin-top: 0.2rem;
+  }
+  .avg{
+    font-size: .22rem;
+    color: #999;
+    margin-bottom: 0;
+  }
+  .avg span{
+    color: #faaf00;
+    font-size: .32rem;
+  }
+  .buy{
+    width: 1rem;
+    height: 0.5rem;
+    color: #333;
+    background: rgb(33, 150, 243);
+    border-radius: 10px;
+    line-height: 0.5rem;
+    text-align: center;
+    position: absolute;
+    top: 1rem;
+    right: 0.3rem;
   }
 </style>

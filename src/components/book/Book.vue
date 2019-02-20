@@ -127,14 +127,14 @@ export default {
 <style>
   .swiper-container {
     width: 100%;
-    height: 3rem;
+    height: 3.5rem;
     margin-top: 1rem;
   }
   .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #eee;
-    padding-top: 0.2rem;
+    padding-top: 0.38rem;
     display: flex;
     justify-content: space-around;
   }
