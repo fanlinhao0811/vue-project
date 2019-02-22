@@ -3,7 +3,7 @@
         <!-- <common-header title="Only" bgColor="#999"></common-header> -->
         <div class="wrapper">
             <div class="img-wrapper">
-                <img src="https://api.yingjoy.cn/pic/?t=bing&w=1366" alt="">
+                <img src="http://api.yingjoy.cn/pic/?t=bing&w=1366" alt="">
             </div>
             <div class = "time">
                 <p>
@@ -18,6 +18,9 @@
                     <span> 」</span>
                 </p>
             </div>
+            <router-link to="/book">
+                <div class="back">Back</div>
+            </router-link>
             <div v-for="(item,index) in list" :key="index" v-show="item.pic">
                 <p>{{item.title}}</p>
                 <img :src="item.pic" alt="">
@@ -130,6 +133,17 @@ mounted(){
 }
 .img-wrapper img{
     width: 100%;
+}
+.back{
+    width: 1rem;
+    height: 0.5rem;
+    border-radius: 10px;
+    background: #ccc;
+    text-align: center;
+    line-height: 0.5rem;
+    color: #666;
+    cursor: pointer;
+    margin-left: 0.5rem;
 }
 </style>
 
