@@ -1,6 +1,7 @@
 <template>
 	<div class="book">
 			<common-header nav="<" title="book" bgColor="rgb(121, 85, 72)"></common-header>
+      <div class="zhanwei"></div>
 			 <div class="swiper-container" v-if="swiperList">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
@@ -125,10 +126,12 @@ export default {
 }
 </script>
 <style>
+  .zhanwei{
+    height: 1rem;
+  }
   .swiper-container {
     width: 100%;
     height: 3.5rem;
-    margin-top: 1rem;
   }
   .swiper-slide {
     text-align: center;
